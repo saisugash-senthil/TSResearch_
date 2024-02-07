@@ -1,0 +1,13 @@
+{% extends "layout1.html" %}
+{% block stuff %}
+
+    <h5 class="dark">To forecast, select one of the following techniques to upload data for {{ text_boxes }} number of days:</h5>
+    <form method="post" action="{{ url_for('uploadpage') }}" enctype="multipart/form-data">
+    <button class="btn btn-outline-success" type="submit">Upload a .csv file</button>
+    </form>
+    <h5 class="dark">OR</h5>
+    <form method="post" action="{{ url_for('modelpage') }}" enctype="multipart/form-data">
+    <button class="btn btn-outline-info" type="submit">Enter the values manually</button>
+    </form>
+
+{% endblock %}

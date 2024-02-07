@@ -1,0 +1,19 @@
+{%extends "layout1.html"%}
+{% block stuff %}
+<h1 class="dark">Result</h1>
+    <h3 class="dark">The predicted value for the day {{ text_boxes+1 }} is:</h3>
+    
+        <p>{{ prediction_result[0] }}</p>
+    <div>
+    <figure class="figure">
+    {{plot_html|safe}}
+          <figcaption class="figure-caption">A depiction of the Confidence Interval for the time series forecast</figcaption>
+</figure>
+    </div>
+            <form method="post" action="{{ url_for('make_predict') }}" enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <button class="btn btn-outline-info" type="submit">Go to home</button>
+             </div>
+           </form>
+{% endblock %}
