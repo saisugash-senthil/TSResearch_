@@ -20,24 +20,12 @@
 
     <h5 class="dark">To forecast, select one of the following techniques to upload data for {{ text_boxes }} number of days:</h5>
     <form method="post" action="{{ url_for('uploadpage') }}" enctype="multipart/form-data">
-    <button class="btn btn-outline-success" type="submit" onclick="onclick()">Upload a .csv file</button>
+    <button class="btn btn-outline-success" type="submit">Upload a .csv file</button>
     </form>
     <h5 class="dark">OR</h5>
     <form method="post" action="{{ url_for('modelpage') }}" enctype="multipart/form-data">
     <button class="btn btn-outline-info" type="submit">Enter the values manually</button>
     </form>
 
-    <script>
-        function onclick(){
-            
-                alert("Please select a model before proceeding!");
-            
-        }
-    document.addEventListener("DOMContentLoaded", function () {
-        var desiredModel = "{{ desiredModel }}";
-        if (desiredModel === 'None') {
-            alert("Please select a model before proceeding!");
-        }
-    });
-</script>
+
 {% endblock %}
