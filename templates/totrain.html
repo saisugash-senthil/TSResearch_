@@ -1,6 +1,6 @@
 {% extends "layout1.html" %}
 {% block stuff %}
-    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <!-- <h5 class="dark">Train your model with data stored from the database:</h5>
     <form method="post" action="{{ url_for('to_train') }}" enctype="multipart/form-data">
         <div class ="btn-group">
@@ -74,5 +74,10 @@
     </form>
     
          -->
-
+<script type="text/javascript">
+    $(window).scroll(()=>{
+        var current_y = $(window).scrollTop();
+   console.log('current_y',current_y);
+    });
+</script>
 {% endblock %}
