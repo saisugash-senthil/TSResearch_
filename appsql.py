@@ -36,7 +36,7 @@ def to_train():
     connection_string = 'DRIVER={{SQL Server}};SERVER={};DATABASE={};Trusted_Connection=yes'.format(server_name,database_name)
     connection = pyodbc.connect(connection_string)
     cursor = connection.cursor()
-    cursor.execute('select Timestamp from AQI_timest_updated')
+    cursor.execute('select TOP 5000 Timestamp from AQI_timest_updated')
     data = [row[0] for row in cursor.fetchall()]
     if request.method=='POST':
         start = request.form.get("selected_option")
